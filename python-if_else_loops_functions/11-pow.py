@@ -11,6 +11,3 @@ def pow(a, b):
         result = 1 / result
 
     return result
-
-
-print(pow(-98, -10))
