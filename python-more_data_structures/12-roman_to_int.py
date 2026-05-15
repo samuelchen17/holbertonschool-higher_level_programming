@@ -9,6 +9,9 @@ def roman_to_int(roman_string):
     total = 0
 
     for i in range(len(roman_string)):
+        if roman_string[i] not in numerals:
+            return 0
+
         if i + 1 == len(roman_string):
             total += numerals[roman_string[i]]
         elif numerals[roman_string[i]] < numerals[roman_string[i + 1]]:
