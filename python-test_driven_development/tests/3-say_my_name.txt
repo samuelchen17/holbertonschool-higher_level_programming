@@ -14,9 +14,9 @@ TypeError: first_name must be a string or last_name must be a string
 >>> say_my_name("bob", 123)
 Traceback (most recent call last):
 ...
-TypeError: first_name must be a string or last_name must be a string
+TypeError: last_name must be a string
 
 >>> say_my_name(123, "bob")
 Traceback (most recent call last):
 ...
-TypeError: first_name must be a string or last_name must be a string
+TypeError: first_name must be a string
