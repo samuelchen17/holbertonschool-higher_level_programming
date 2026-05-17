@@ -4,9 +4,19 @@
 My name is bob the builder
 
 >>> say_my_name("bob")
-My name is bob
+My name is bob 
 
 >>> say_my_name(123, 123)
+Traceback (most recent call last):
+...
+TypeError: first_name must be a string or last_name must be a string
+
+>>> say_my_name("bob", 123)
+Traceback (most recent call last):
+...
+TypeError: first_name must be a string or last_name must be a string
+
+>>> say_my_name(123, "bob")
 Traceback (most recent call last):
 ...
 TypeError: first_name must be a string or last_name must be a string
