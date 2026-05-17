@@ -7,8 +7,8 @@ def matrix_divided(matrix, div):
     the results of the division rounded to 2 decimal places
     """
 
-    # must be list and matrix not empty
-    if not isinstance(matrix, list) or len(matrix) == 0:
+    # must be list
+    if not isinstance(matrix, list):
         raise TypeError("matrix must be a matrix (list of lists) of integers/floats")
 
     # check list of lists
