@@ -43,3 +43,11 @@ TypeError: h must be an integer
 >>> bg.integer_validator("h", None)
 Traceback (most recent call last):
 TypeError: h must be an integer
+
+>>> bg.integer_validator()
+Traceback (most recent call last):
+TypeError: BaseGeometry.integer_validator() missing 2 required positional arguments: 'name' and 'value'
+
+>>> bg.integer_validator("age")
+Traceback (most recent call last):
+TypeError: BaseGeometry.integer_validator() missing 1 required positional argument: 'value'
