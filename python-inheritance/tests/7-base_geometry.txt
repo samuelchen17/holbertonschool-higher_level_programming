@@ -23,3 +23,23 @@ TypeError: h must be an integer
 >>> bg.integer_validator("h", "5")
 Traceback (most recent call last):
 TypeError: h must be an integer
+
+>>> bg.integer_validator("h", (4,))
+Traceback (most recent call last):
+TypeError: h must be an integer
+
+>>> bg.integer_validator("h", [4])
+Traceback (most recent call last):
+TypeError: h must be an integer
+
+>>> bg.integer_validator("h", True)
+Traceback (most recent call last):
+TypeError: h must be an integer
+
+>>> bg.integer_validator("h", {3, 4})
+Traceback (most recent call last):
+TypeError: h must be an integer
+
+>>> bg.integer_validator("h", {3, None})
+Traceback (most recent call last):
+TypeError: h must be an integer
