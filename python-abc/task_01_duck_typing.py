@@ -17,20 +17,12 @@ class Shape(ABC):
         """perimeter of shape"""
         pass
 
-    def integer_validator(self, name, value):
-        """validates value"""
-        if type(value) is not int:
-            raise TypeError(f"{name} must be an integer")
-        if value <= 0:
-            raise ValueError(f"{name} must be greater than 0")
-
 
 class Circle(Shape):
     """Circle class"""
 
     def __init__(self, radius):
         """Initialize circle"""
-        super().integer_validator("radius", radius)
         self.__radius = radius
 
     def area(self):
@@ -47,8 +39,6 @@ class Rectangle(Shape):
 
     def __init__(self, width, height):
         """Initialize square."""
-        super().integer_validator("width", width)
-        super().integer_validator("height", height)
         self.__width = width
         self.__height = height
 
