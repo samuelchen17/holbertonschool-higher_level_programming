@@ -1,0 +1,12 @@
+#!/usr/bin/python3
+
+
+"""This module contains a function"""
+
+import json
+
+
+def from_json_string(my_str):
+    """unction that returns an object (Python data structure)
+    represented by a JSON string"""
+    return json.loads(my_str)
