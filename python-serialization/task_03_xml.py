@@ -23,12 +23,18 @@ def deserialize_from_xml(filename):
     for child in root:
         value = child.text
 
-        if value.isdigit():
-            value = int(value)
-        elif value == "True":
+        if value == "True":
             value = True
         elif value == "False":
             value = False
+        else:
+            try:
+                value = int(value)
+            except ValueError:
+                try:
+                    value = float(value)
+                except ValueError:
+                    pass
 
         data[child.tag] = value
 
