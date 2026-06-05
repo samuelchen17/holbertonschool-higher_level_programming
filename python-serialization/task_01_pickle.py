@@ -18,7 +18,7 @@ class CustomObject:
         try:
             with open(filename, "wb") as f:
                 pickle.dump(self, f)
-        except:
+        except Exception:
             return None
 
     @classmethod
@@ -26,5 +26,5 @@ class CustomObject:
         try:
             with open(filename, "rb") as f:
                 return pickle.load(f)
-        except:
+        except Exception:
             return None
