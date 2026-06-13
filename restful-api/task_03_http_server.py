@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 
-"""This module contains functions for retrieving data from an API"""
+"""This module contains a simple API"""
 
 import http.server, json
 
