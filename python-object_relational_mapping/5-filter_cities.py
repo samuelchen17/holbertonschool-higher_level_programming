@@ -22,11 +22,12 @@ if __name__ == "__main__":
     cur.execute(
         """
         SELECT cities.name
-        FROM cities JOIN states
+        FROM cities
+        JOIN states
         ON cities.state_id = states.id
-        WHERE BINARY name=%(state_name)s
-        ORDER BY cities.id ASC
-        """,
+        WHERE states.name=%(state)s
+        ORDER BY cities.id
+    """,
         {"state": sys.argv[4]},
     )
 
