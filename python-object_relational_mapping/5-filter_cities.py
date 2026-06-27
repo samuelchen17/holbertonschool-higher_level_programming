@@ -23,7 +23,7 @@ if __name__ == "__main__":
         """
         SELECT cities.name
         FROM cities JOIN states
-        ON cities.state.id = states.id
+        ON cities.state_id = states.id
         WHERE BINARY name=%(state_name)s
         ORDER BY cities.id ASC
         """,
