@@ -14,17 +14,17 @@ if __name__ == "__main__":
         passwd=sys.argv[2],
         db=sys.argv[3],
         port=3306,
+        charset="utf8",
     )
 
     cur = conn.cursor()
 
-    query = """
-        SELECT id, name 
-        FROM states 
-        WHERE BINARY name = %s 
-        ORDER BY id ASC
-    """
-    cur.execute(query)
+    cur.execute("""
+        SELECT cities.id, cities.name, states.name
+        FROM cities JOIN states
+        ON cities.state.id = states.id
+        ORDER BY cities.id ASC
+        """)
 
     rows = cur.fetchall()
     for row in rows:

@@ -19,8 +19,6 @@ if __name__ == "__main__":
 
     cur = conn.cursor()
 
-    state_name = sys.argv[4]
-
     cur.execute(
         """
         SELECT *
