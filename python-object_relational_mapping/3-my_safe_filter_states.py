@@ -21,13 +21,15 @@ if __name__ == "__main__":
 
     state_name = sys.argv[4]
 
-    query = """
+    cur.execute(
+        """
         SELECT *
-        FROM states 
-        WHERE BINARY name = %s 
+        FROM states
+        WHERE BINARY name=%(state)s
         ORDER BY id ASC
-    """
-    cur.execute(query, (state_name,))
+        """,
+        {"state": sys.argv[4]},
+    )
 
     rows = cur.fetchall()
     for row in rows:
