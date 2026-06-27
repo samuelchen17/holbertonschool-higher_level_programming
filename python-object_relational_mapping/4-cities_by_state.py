@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-select all in states where name matches arg
+list all cities in db
 """
 
 import MySQLdb
@@ -14,20 +14,17 @@ if __name__ == "__main__":
         passwd=sys.argv[2],
         db=sys.argv[3],
         port=3306,
-        charset="utf8",
     )
 
     cur = conn.cursor()
 
-    state_name = sys.argv[4]
-
     query = """
-        SELECT *
+        SELECT id, name 
         FROM states 
         WHERE BINARY name = %s 
         ORDER BY id ASC
     """
-    cur.execute(query, (state_name,))
+    cur.execute(query)
 
     rows = cur.fetchall()
     for row in rows:
