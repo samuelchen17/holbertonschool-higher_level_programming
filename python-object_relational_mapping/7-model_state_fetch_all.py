@@ -7,24 +7,14 @@ import sys
 from model_state import Base, State
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
-from sqlalchemy.engine import URL
 
 if __name__ == "__main__":
 
-    url = URL.create(
-        "mysql+mysqldb",
-        username=sys.argv[1],
-        password=sys.argv[2],
-        host="localhost",
-        port=3306,
-        database=sys.argv[3],
-    )
-
     engine = create_engine(
-        url,
+        f"mysql+mysqldb://{sys.argv[1]}:{sys.argv[2]}"
+        f"@localhost:3306/{sys.argv[3]}",
         pool_pre_ping=True,
     )
-    Base.metadata.create_all(engine)
 
     Session = sessionmaker(bind=engine)
     session = Session()
