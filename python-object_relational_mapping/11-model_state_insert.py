@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-Module that takes arg and prints the matching state object
+Module that adds new state to db
 """
 
 import sys
@@ -19,13 +19,11 @@ if __name__ == "__main__":
     Session = sessionmaker(bind=engine)
     session = Session()
 
-    state_name = sys.argv[4]
+    new_state = State(name="Louisiana")
+    session.add(new_state)
+    session.commit()
 
-    state = (session.query(State).filter(State.name == state_name)).order_by(
-        State.id
-    )
+    states = session.query(State).order_by(State.id)
 
-    if state:
+    for state in states:
         print(f"{state.id}: {state.name}")
-    else:
-        print("Not found")
