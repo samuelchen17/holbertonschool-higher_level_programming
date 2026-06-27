@@ -21,10 +21,10 @@ if __name__ == "__main__":
     state_name = sys.argv[4]
 
     query = """
-        "SELECT id, name "
-        "FROM states "
-        "WHERE BINARY name = %s "
-        "ORDER BY id ASC"
+        SELECT id, name 
+        FROM states 
+        WHERE BINARY name = %s 
+        ORDER BY id ASC
     """
     cur.execute(query, (state_name,))
 
