@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-list all cities in db
+takes name as arg, list all cities of that state
 """
 
 import MySQLdb
@@ -19,12 +19,16 @@ if __name__ == "__main__":
 
     cur = conn.cursor()
 
-    cur.execute("""
-        SELECT cities.id, cities.name, states.name
+    cur.execute(
+        """
+        SELECT cities.name
         FROM cities JOIN states
         ON cities.state.id = states.id
+        WHERE BINARY name=%(state_name)s
         ORDER BY cities.id ASC
-        """)
+        """,
+        {"state": sys.argv[4]},
+    )
 
     rows = cur.fetchall()
     for row in rows:
