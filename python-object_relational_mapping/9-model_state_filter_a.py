@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-Module that prints first state object from DB
+Module that prints all states that have the letter 'a' in DB
 """
 
 import sys
