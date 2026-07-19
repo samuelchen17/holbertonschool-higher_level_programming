@@ -54,5 +54,5 @@ def generate_invitations(template, attendees):
             with open(filename, "w") as file:
                 file.write(invite)
 
-        except OSError as err:
+        except Exception as err:
             print(f"Error {filename}: {err}")
