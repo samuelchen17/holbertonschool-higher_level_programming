@@ -76,7 +76,6 @@ def products():
     else:
         return render_template("product_display.html", error="Wrong source")
 
-    # Filter by id if provided
     if product_id:
 
         product_id = int(product_id)
